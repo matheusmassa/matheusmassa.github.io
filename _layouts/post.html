@@ -20,7 +20,7 @@ post_class: post-template
             <h1 class="post-title">{{ page.title }}</h1>
             <section class="post-meta">
                 {% if page.categories.size > 0 %}
-                    {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
+                    {{ page.categories | array_to_sentence_string: "e" | prepend: 'em ' }}
                 {% endif %}
                 <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
             </section>
@@ -72,7 +72,9 @@ post_class: post-template
                     <h4> {{ site.author }} </h4>
                     <!-- Author Bio -->
                     <p>
-                        Here goes the author description. You might want to place some links too in here
+                        <p>Mesmo do about me.</p>
+                        <a href="https://github.com/matheusmassa"><i class="fab fa-github fa-2x" style="margin-right: 2px;"></i></a>
+                        <a href="https://www.linkedin.com/in/matheusmassa/"><i class="fab fa-linkedin fa-2x"></i></a>
                     </p>
                 </section>
             {% endif %}
